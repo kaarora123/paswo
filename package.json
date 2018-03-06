@@ -1,6 +1,6 @@
 {
   "name": "paswo",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "CLI utility that generates, hashes, and stores passwords",
   "main": "index.js",
   "scripts": {
