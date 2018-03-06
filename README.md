@@ -22,7 +22,7 @@ npm install -g paswo
 
 Type ```paswo``` into your command line.
 
-![alt text](/media/paswo/paswo.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo/paswo.png">
 
 #### Generate a random pasword: 
 
@@ -32,15 +32,14 @@ You can specify the length and use the flag -s or --special to include special c
 
 ```paswo: create [length] -s ```
 
-![alt text](/media/paswo/create.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo/create.png">
 
 #### Hash a string with the chosen hashing algorithm:
 
 ```paswo: hash```
 
-![alt text](/media/paswo/hash-choosing.png?raw=true)
-
-![alt text](/media/paswo/hash-complete.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo/hash-choosing.png">
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo/hash-complete.png">
 
 #### Open database:
 
@@ -52,62 +51,61 @@ The ```db``` command will switch to ```paswo-db``` and connect to your database 
 
 If the database file does not exist, using ```db``` will ask you to create a new master key for your database and create the database file.
 
-![alt text](/media/paswo/create-master-key.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo/create-master-key.png">
 
 ##### Use master key to open your database:
 
 If the database file does exist, using ```db``` will ask for your master key to connect to your database.
 
-![alt text](/media/paswo/open-db.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo/open-db.png">
 
 ### Database Commands
 
 After you successfully open your database, you have access to your stored passwords.
 
-![alt text](/media/paswo-db/paswo-db.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/paswo-db.png">
 
 #### Change master key:
 
 ```paswo-db: change master key ```
 
-![alt text](/media/paswo-db/change-master-key.png)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/change-master-key.png">
 
 #### Add password for a specific website:
 
 ```paswo-db: add <website> ```
 
-![alt text](/media/paswo-db/add.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/add.png">
 
 #### View websites you have added passwords for:
 
 ```paswo-db: ls```
 
-![alt text](/media/paswo-db/ls.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/ls.png">
 
 #### Get the password for a specific website:
 
 ```paswo-db: get <website>```
 
-![alt text](/media/paswo-db/get.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/get.png">
 
 #### Update the password for a specific website:
 
 ```paswo-db: update <website> ```
 
-![alt text](/media/paswo-db/update.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/update.png">
 
 #### Delete the password for a specific website:
 
 ```paswo-db: delete <website>```
 
-![alt text](/media/paswo-db/delete.png?raw=true)
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/delete.png">
 
 #### Close database and exit paswo-db:
 
 ```paswo-db: exit```
 
-![alt text](/media/paswo-db/exit.png?raw=true)
-
+<img src="https://raw.githubusercontent.com/kaarora123/paswo/master/media/paswo-db/exit.png">
 
 -----
 
