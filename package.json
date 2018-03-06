@@ -1,0 +1,46 @@
+{
+  "name": "paswo",
+  "version": "1.0.1",
+  "description": "CLI utility that generates, hashes, and stores passwords",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test/database-test.js && mocha test/hash-create-test.js"
+  },
+  "author": "Kashish Arora",
+  "license": "MIT",
+  "preferGlobal": true,
+  "bin": {
+    "paswo": "./index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "chalk": "^2.3.1",
+    "clipboardy": "^1.2.3",
+    "fs": "0.0.1-security",
+    "inquirer": "^5.1.0",
+    "node-localstorage": "^1.3.0",
+    "sqlite3": "^3.1.13",
+    "vorpal": "^1.12.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1",
+    "mock-stdin": "^0.3.1"
+  },
+  "directories": {
+    "lib": "./lib",
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaarora123/paswo"
+  },
+  "keywords": [
+    "CLI",
+    "password-manager",
+    "password",
+    "hash",
+    "encrypt",
+    "safe"
+  ]
+}
