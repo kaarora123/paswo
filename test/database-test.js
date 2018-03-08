@@ -76,7 +76,7 @@ describe("Password database", () => {
 		it("should return true for rowExists and string for password", (done) => {
 			db.checkRowExistence(testWebsite1, (err, rowExists, password) => {
 				expect(rowExists).to.be.true;
-				expect(password).to.be.a("string")
+				expect(password).to.be.a("string");
 				done();
 			});
 		});

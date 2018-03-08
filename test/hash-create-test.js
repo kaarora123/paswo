@@ -69,7 +69,7 @@ describe("create and hash functions", () => {
 		var keys = {
 			up: "\u001b[A",
 			down: "\u001b[B"
-		}
+		};
 
 		function mockResponse(string, numDown) {
 			function getAlgorithm(numDown) {

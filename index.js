@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const vorpal = require("vorpal");
+const Vorpal = require("vorpal");
 const chalk = require("chalk");
 const inquirer = require("inquirer");
 const clipboardy = require("clipboardy");
@@ -25,12 +25,12 @@ const errors = {
 	database: error("There was an error accessing the database. Please make sure the database file was not deleted."),
 	localStorage: error("Local storage error."),
 	masterKey: error("Error: Cannot find masterKey in local storage. Please make sure local storage files were not deleted.")
-}
+};
 
 var localStorage = new LocalStorage(path.join(__dirname, "local_storage"));
 
-var paswo = new vorpal().delimiter("paswo:").history("paswo").show().log(chalk.bold.underline.inverse("WELCOME TO PASWO!"));
-var paswoDB = new vorpal().delimiter("paswo-db:");
+var paswo = new Vorpal().delimiter("paswo:").history("paswo").show().log(chalk.bold.underline.inverse("WELCOME TO PASWO!"));
+var paswoDB = new Vorpal().delimiter("paswo-db:");
 
 paswoDB.find("exit").remove();
 
@@ -85,7 +85,7 @@ paswo
 	.action((args, callback) => {
 
 		function openDatabase(masterKey) {
-			db.connectDatabase(masterKey, (err)=> {
+			db.connectDatabase(masterKey, err => {
 				if(err) paswo.log(errors.database);
 				else paswo.log(chalk.hex("#635E96").bold("Connected to database!"));
 			});
@@ -96,7 +96,7 @@ paswo
 		//if database does not exist, asks the user to create a master key
 		if (! db.databaseExists()) {
 			auth.createMasterKey().then(key => {
-				try {localStorage.setItem("masterKey", auth.hashKey(key))}
+				try {localStorage.setItem("masterKey", auth.hashKey(key));}
 				catch(e) {
 					paswo.log(errors.localStorage); 
 					return callback();
@@ -115,14 +115,15 @@ paswo
 					var masterKey = localStorage.getItem("masterKey");
 					if(masterKey === null) throw Error();
 
+					if(!auth.checkMasterKey(input, masterKey)) {
+						paswo.log(chalk.hex("#B265A5").bold("Sorry, that is incorrect.")); 
+					} else {openDatabase(input)}
+
+
 				} catch(e) {
 					paswo.log(errors.masterKey);
 					return callback();
 				}
-
-				if(!auth.checkMasterKey(input, masterKey)) {
-					paswo.log(chalk.hex("#B265A5").bold("Sorry, that is incorrect.")); 
-				} else {openDatabase(input)}
 
 				callback();
 			}).catch(e => {
@@ -333,7 +334,7 @@ paswoDB
 	.action((args, callback) => {
 		paswo.show();
 		db.closeDatabase((err) => {
-			if(err) paswoDB,log(errors.database);
+			if(err) paswoDB.log(errors.database);
 			else {
 				paswoDB.log(chalk.yellowBright.bold("Database closed."));
 			}
